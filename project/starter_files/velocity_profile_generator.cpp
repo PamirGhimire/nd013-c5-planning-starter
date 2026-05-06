@@ -126,7 +126,7 @@ std::vector<TrajectoryPoint> VelocityProfileGenerator::decelerate_trajectory(
     // Let's now go backwards until we get to the very beginning of the path
     for (int i = stop_index - 1; i >= 0; --i) {
       auto dist = utils::distance(spiral[i + 1], spiral[i]);
-      auto vi = calc_final_speed(vf, -_a_max, dist);
+      auto vi = calc_final_speed(vf, _a_max, dist);
       if (vi > start_speed) {
         vi = start_speed;
       }
